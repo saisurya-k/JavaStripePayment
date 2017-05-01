@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th='http://www.thymeleaf.org'>
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Checkout</title>
+</head>
+<body>
+<form action="/charge" method = 'POST' id='checkout-form'>
+<input type='hidden' th:value='${amount}' name='amount'/>
+<label>Price:<span th:text='${amount}'> </span></label>
+<script type="text/javascript" src='https://checkout.stripe.com/checkout.js'
+		class='stripe-button'
+		th:attr='data-key=${PublicKey},data-amount=${Amount} ,data-currency=${Currency}'
+		data-name='saisurya'
+		data-description='Sample Checkout'
+		data-image='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRFavmj2jfnr_YSBMUsrlbjh4ipSNEgbhGbnffP3VC1Y5j67oYN'
+		data-locale='auto'
+		data-zip-code='true'>
+
+</script>
+</form>
+
+</body>
+</html>
